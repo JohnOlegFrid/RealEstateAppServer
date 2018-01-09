@@ -1,0 +1,8 @@
+user : admin
+password: realestateapp
+
+you run the next commands via you terminal :
+ssh admin@132.72.23.69
+
+enter the password and walla ! you in :)
+
