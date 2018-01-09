@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService{
 
     @Transactional
     @Override
-    public User getUserByID(String ID) {
-        return null;
+    public User getByToken(String token) {
+        return userRepository.findOne(token);
     }
 }

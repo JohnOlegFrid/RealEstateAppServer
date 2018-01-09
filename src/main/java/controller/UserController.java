@@ -30,4 +30,10 @@ public class UserController {
         return userService.register(u);
     }
 
+    @RequestMapping("/getByToken")
+    public @ResponseBody User findByToken(@RequestHeader ("token") String token){
+        System.out.println("get by token : "+token);
+        return userService.getByToken(token);
+    }
+
 }
