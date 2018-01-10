@@ -5,6 +5,7 @@ import domain.Apartment;
 import java.util.List;
 
 public interface ApartmentService {
-    public List<Apartment> getAll();
+    List<Apartment> getAll();
+    Apartment addNew(Apartment apt);
 
 }

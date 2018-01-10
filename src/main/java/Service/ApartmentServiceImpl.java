@@ -20,11 +20,16 @@ public class ApartmentServiceImpl implements ApartmentService {
     @Override
     public List<Apartment> getAll() {
         Iterable<Apartment> l= apartmentRepository.findAll();
-        List<Apartment> ans= new ArrayList<Apartment>();
+        List<Apartment> ans= new ArrayList<>();
         for (Apartment i : l){
             ans.add(i);
 
         }
         return ans;
+    }
+
+    @Override
+    public Apartment addNew(Apartment apt) {
+        return apartmentRepository.save(apt);
     }
 }
