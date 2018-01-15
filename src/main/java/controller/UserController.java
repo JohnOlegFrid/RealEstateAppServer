@@ -26,8 +26,8 @@ public class UserController {
                         @RequestHeader("image") String image) {
         System .out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         System .out.println("token: "+token+"\nfirstName: "+firstName+"\nlastName:"+lastName);
-        User u = new User(token, firstName, lastName, email, gender, 0.0, 0.0, image);
-        return userService.register(u);
+        User u = new User(token, firstName, lastName, gender, email, 0.0, 0.0, image);
+            return userService.register(u);
     }
 
     @RequestMapping("/getByToken")
