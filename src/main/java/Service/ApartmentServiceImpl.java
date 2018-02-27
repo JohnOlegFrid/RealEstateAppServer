@@ -32,4 +32,13 @@ public class ApartmentServiceImpl implements ApartmentService {
     public Apartment addNew(Apartment apt) {
         return apartmentRepository.save(apt);
     }
+
+    @Override
+    public Apartment edit(Apartment apt) {
+        if (apartmentRepository.exists(apt.getAddress())) {
+            apartmentRepository.delete(apt);
+            return apartmentRepository.save(apt);
+        }
+        else return null;
+    }
 }

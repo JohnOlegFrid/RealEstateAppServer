@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 
 @Controller
@@ -34,6 +35,20 @@ public class UserController {
     public @ResponseBody User findByToken(@RequestHeader ("token") String token){
         System.out.println("get by token : "+token);
         return userService.getByToken(token);
+    }
+
+    @RequestMapping("/getAll")
+    public @ResponseBody List<User> getAllApartments(){
+        System.out.println("getAllUsers");
+        return userService.getAll();
+
+    }
+
+
+    @RequestMapping("/forTest")
+    public @ResponseBody String forTest(){
+        //System.out.println("get by token : "+token);
+        return "s";
     }
 
 }
