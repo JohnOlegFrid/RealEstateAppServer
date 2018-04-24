@@ -1,33 +1,42 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Id;
+
+import org.hibernate.jpa.criteria.expression.function.AggregationFunction.AVG;
 
 @javax.persistence.Entity
 public class User {
 
-    //@GeneratedValue(strategy=GenerationType.AUTO)
     @Id
     private String token;
     private String firstName;
     private String lastName;
     private String gender;
     private String email;
-    private Double avgRankLandLoard;
-    private Double avgRankRanker;
+    private Double averageRank;
+    private Integer numOfRankers;
     private String image;
+    private Role role;
+    @ElementCollection private List<String> wishList;
+    
 
     public User(){}
 
-    public User(String token, String firstName, String lastName, String gender, String email, Double avgRankLandLoard, Double avgRankRanker, String image) {
+    public User(String token, String firstName, String lastName, String gender, String email, String image,Role role) {
         this.setImage(image);
         this.setToken(token);
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setGender(gender);
         this.setEmail(email);
-        this.setAvgRankLandLoard(avgRankLandLoard);
-        this.setAvgRankRanker(avgRankRanker);
-
+        averageRank = 0.0;
+        numOfRankers = 0;
+        wishList = new ArrayList<>();
+        this.role = role;
     }
 
     public String getToken() {
@@ -70,22 +79,23 @@ public class User {
         this.email = email;
     }
 
-    public Double getAvgRankLandLoard() {
-        return avgRankLandLoard;
-    }
-
-    public void setAvgRankLandLoard(Double avgRankLandLoard) {
-        this.avgRankLandLoard = avgRankLandLoard;
-    }
+//    public Double getAvgRankLandLoard() {
+//        return avgRankLandLoard.getSecond();
+//    }
+//
+//    public void setAvgRankLandLoard(Double rank) {
+//    	Rank.rank(avgRankLandLoard, rank);
+//    }
 
     public Double getAvgRankRanker() {
-        return avgRankRanker;
+        return averageRank;
     }
 
-    public void setAvgRankRanker(Double avgRankRanker) {
-        this.avgRankRanker = avgRankRanker;
+    public void setAvgRankRanker(double rank) {
+    	numOfRankers++;
+    	averageRank = (numOfRankers * averageRank + averageRank) / numOfRankers;    
     }
-
+    
     public String getImage() {
         return image;
     }
@@ -93,5 +103,23 @@ public class User {
     public void setImage(String image) {
         this.image = image;
     }
+    
+    public void addApartmentToWishList(String address) {
+    	wishList.add(address);
+    }
+
+	public List<String> getWishList() {
+		return wishList;
+	}
+	
+	public Role getRole() {
+		return role;
+	}
+
+	public boolean isRoot() {
+		return role == Role.Root;
+	}
+	
+	
 }
 

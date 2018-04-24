@@ -3,7 +3,6 @@ package domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
 @Entity
 public class Apartment {
 
@@ -18,15 +17,19 @@ public class Apartment {
     private String description;
     private Double size;
     private Double averageRank;
+    private Integer numOfRankers;
     private Boolean parking;
     private Integer numToilet;
     private Integer numRooms;
     private String image;
+	private Integer views;
 
 
     public Apartment(){}
 
-    public Apartment(Integer price, Integer floor, Boolean elevator, Integer constructionYear, Boolean wareHouse, String description, Double size, Double averageRank, String address, Boolean parking, Integer numToilet, Integer numRooms, String landLordID, String image) {
+    public Apartment(Integer price, Integer floor, Boolean elevator, Integer constructionYear,
+    		Boolean wareHouse, String description, Double size, String address,
+    		Boolean parking, Integer numToilet, Integer numRooms, String landLordID, String image) {
         this.setImage(image);
         this.setLandLordID(landLordID);
         this.setPrice(price);
@@ -36,11 +39,13 @@ public class Apartment {
         this.setWareHouse(wareHouse);
         this.setDescription(description);
         this.setSize(size);
-        this.setAvergeRank(averageRank);
         this.setAddress(address);
         this.setParking(parking);
         this.setNumToilet(numToilet);
         this.setNumRooms(numRooms);
+        averageRank = 0.0;
+        numOfRankers = 0;
+        views = 0;
     }
 
     public String getAddress() {
@@ -112,7 +117,8 @@ public class Apartment {
     }
 
     public void setAvergeRank(Double averageRank) {
-        this.averageRank = averageRank;
+    	numOfRankers++;
+    	averageRank = (numOfRankers * averageRank + averageRank) / numOfRankers;
     }
 
     public Boolean getParking() {
@@ -154,6 +160,14 @@ public class Apartment {
     public void setImage(String image) {
         this.image = image;
     }
+
+	public void addViews() {
+		views++;
+	}
+
+	public int getViews() {
+		return views;
+	}
 }
 
 

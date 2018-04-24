@@ -1,5 +1,8 @@
 package Service;
 import DL.UserRepository;
+import domain.Apartment;
+//import domain.Apartment;
+import domain.Role;
 import domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,15 +14,9 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService{
 
-    @Autowired
-    private UserRepository userRepository;
-
-
-    @Transactional
-    public User register(User u){
-        return userRepository.save(u);
-
-    }
+   
+	@Autowired private UserRepository userRepository;
+	@Autowired private ApartmentService apartmentService;
 
     @Transactional
     @Override
@@ -38,4 +35,35 @@ public class UserServiceImpl implements UserService{
         }
         return ans;
     }
+    
+    @Override
+    public void rank(String token, int rank) {
+    	User user = getByToken(token);
+    	user.setAvgRankRanker((double) rank);
+    }
+
+	@Override
+	public void addApartmentToFavorite(String token, String address) {
+		User user = getByToken(token);
+		user.addApartmentToWishList(address);
+	}
+
+	@Override
+	public List<Apartment> getUserWishList(String token) {
+		List<Apartment> ans = new ArrayList<>();
+		User user = getByToken(token);
+		List<String> addresses = user.getWishList();
+		for (String address : addresses) {
+			ans.add(apartmentService.getByAddress(address));
+		}
+		return ans;
+	}
+
+	@Override
+	@Transactional
+	public User register(String token, String firstName, String lastName, String gender, String email, String image,
+			Role root) {
+		User user = new User(token, firstName, lastName, gender, email, image, Role.Root);
+		return userRepository.save(user);
+	}
 }

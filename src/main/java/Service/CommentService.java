@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface CommentService {
 
-    List<Comment> getAllByAddress(String address);
-    Comment addNew(Comment comment);
+	List<Comment> getAllComments(String commented);
+	Comment addNewComment(String to, String from, String text);
 }

@@ -2,13 +2,16 @@ package domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+
 import java.sql.Timestamp;
 
-@Entity
+@Entity 
 public class Comment {
 
     @Id
-    private String address;
+    private int commentId;
+    private String commented;
     private String userToken;
     private String text;
     private Timestamp timeStamp;
@@ -18,8 +21,9 @@ public class Comment {
 
     public Comment(){}
 
-    public Comment(String address,String userID,String text,Timestamp timeStamp,String userPictureUrl,String userName) {
-        this.setAddress(address);
+    public Comment(int id,String address,String userID,String text,Timestamp timeStamp,String userPictureUrl,String userName) {
+        this.commentId = id;
+    	this.setAddress(address);
         this.setUserID(userID);
         this.setText(text);
         this.setTimeStamp(timeStamp);
@@ -28,11 +32,11 @@ public class Comment {
     }
 
     public String getAddress() {
-        return address;
+        return commented;
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        this.commented = address;
     }
 
     public String getUserToken() {
