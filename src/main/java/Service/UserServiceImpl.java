@@ -66,4 +66,10 @@ public class UserServiceImpl implements UserService{
 		User user = new User(token, firstName, lastName, gender, email, image, Role.Root);
 		return userRepository.save(user);
 	}
+
+	@Override
+	public boolean isExist(String token) {
+		return userRepository.exists(token);
+		
+	}
 }

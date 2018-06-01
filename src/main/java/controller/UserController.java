@@ -49,6 +49,11 @@ public class UserController {
     	userService.addApartmentToFavorite(token, address);
 
     }
+    
+    @RequestMapping("/isExist")
+    public boolean isExist(@RequestHeader ("token") String token){
+    	return userService.isExist(token);
+}
 
 //    @RequestMapping("/wishList")
 //    public @ResponseBody List<Apartment> getUserWishList(@RequestHeader ("token") String token) {

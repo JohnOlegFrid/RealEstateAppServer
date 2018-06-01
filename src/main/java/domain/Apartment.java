@@ -118,7 +118,7 @@ public class Apartment {
 
     public void setAvergeRank(Double averageRank) {
     	numOfRankers++;
-    	averageRank = (numOfRankers * averageRank + averageRank) / numOfRankers;
+    	this.averageRank = (numOfRankers * this.averageRank + averageRank) / (numOfRankers + 1);
     }
 
     public Boolean getParking() {

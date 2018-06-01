@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a32cbf07-a433-405f-8a88-5ce34b847638" name="Default" comment="">
+    <list default="true" id="0ea436cc-f2cd-4064-9f7d-a80fe402f8f5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DL/ApartmentRepository.java" afterPath="$PROJECT_DIR$/src/main/java/DL/ApartmentRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DL/CommentRepository.java" afterPath="$PROJECT_DIR$/src/main/java/DL/CommentRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/ApartmentService.java" afterPath="$PROJECT_DIR$/src/main/java/Service/ApartmentService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/ApartmentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/Service/ApartmentServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/CommentService.java" afterPath="$PROJECT_DIR$/src/main/java/Service/CommentService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/CommentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/Service/CommentServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/Response.java" afterPath="$PROJECT_DIR$/src/main/java/Service/Response.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/Service/UserService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/Service/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ApartmentController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/ApartmentController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Application.java" afterPath="$PROJECT_DIR$/src/main/java/controller/Application.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CommentController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/CommentController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileSnapshots.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/taskArtifacts.bin" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/RealEstateAppServer.tar" afterPath="$PROJECT_DIR$/build/distributions/RealEstateAppServer.tar" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/RealEstateAppServer.zip" afterPath="$PROJECT_DIR$/build/distributions/RealEstateAppServer.zip" />
+      <change beforePath="$PROJECT_DIR$/build/libs/Server-0.1.0.jar" afterPath="$PROJECT_DIR$/build/libs/Server-0.1.0.jar" />
+      <change beforePath="$PROJECT_DIR$/build/libs/Server-0.1.0.jar.original" afterPath="$PROJECT_DIR$/build/libs/Server-0.1.0.jar.original" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/Apartment.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Apartment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Comment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/User.java" afterPath="$PROJECT_DIR$/src/main/java/domain/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/UserControllerTests.java" afterPath="$PROJECT_DIR$/src/main/test/java/controller/UserControllerTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,36 +26,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
+      <file leaf-file-name="ApartmentController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ApartmentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentController.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/controller/CommentController.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-330">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#2032#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApartmentController.class" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/controller/ApartmentController.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1571">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#6578#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -118,7 +88,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,36 +98,36 @@
             <path>
               <item name="RealEstateAppServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="RealEstateAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RealEstateAppServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="RealEstateAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RealEstateAppServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RealEstateAppServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RealEstateAppServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RealEstateAppServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RealEstateAppServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RealEstateAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RealEstateAppServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RealEstateAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RealEstateAppServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RealEstateAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
-              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,11 +237,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a32cbf07-a433-405f-8a88-5ce34b847638" name="Default" comment="" />
-      <created>1524477660273</created>
+      <changelist id="0ea436cc-f2cd-4064-9f7d-a80fe402f8f5" name="Default" comment="" />
+      <created>1527856451180</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1524477660273</updated>
+      <updated>1527856451180</updated>
     </task>
     <servers />
   </component>
@@ -284,18 +253,18 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="DBHelper" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="db4o" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="DBOutput" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -316,31 +285,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ApartmentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/controller/CommentController.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2032#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/controller/ApartmentController.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1571">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#6578#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
