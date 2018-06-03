@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService{
     }
     
     @Override
-    public void rank(String token, int rank) {
+    public void rank(String token, double rank) {
     	User user = getByToken(token);
     	user.setAvgRankRanker((double) rank);
     	userRepository.save(user);

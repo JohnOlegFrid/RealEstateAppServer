@@ -12,7 +12,7 @@ public interface UserService {
 
     User getByToken(String token);
     List<User> getAll();
-	void rank(String token, int rank);
+	void rank(String token, double rank);
 	void addApartmentToFavorite(String token, String address);
 	List<Apartment> getUserWishList(String token);
 	User register(String token, String firstName, String lastName, String gender, String email, String image,

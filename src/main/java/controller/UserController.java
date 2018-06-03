@@ -4,7 +4,6 @@ package controller;
 import domain.Role;
 import domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,9 +49,9 @@ public class UserController {
     	userService.addApartmentToFavorite(token, address);
 
     }
-    @ResponseBody
+    
     @RequestMapping("/isExist")
-    public Boolean isExist(@RequestHeader ("token") String token){
+    public boolean isExist(@RequestHeader ("token") String token){
     	return userService.isExist(token);
 }
 

@@ -19,17 +19,19 @@ public class RankController {
 	 @Autowired
 	 ApartmentService apartmentService;
 	 
+	 @ResponseBody
 	@RequestMapping("/address")
 	public void rankAddress(@RequestHeader("address") String address,
-                         @RequestHeader("rank") int rank){
+                         @RequestHeader("rank") double rank){
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/rank/address");
         System.out.println("address: " + address + "\ntext:" + rank);
         apartmentService.rank(address, rank);
     }
 
+	 @ResponseBody
 	@RequestMapping("/user")
     public void rankUser(@RequestHeader("userId") String userId,
-                         @RequestHeader("rank") int rank){
+                         @RequestHeader("rank") double rank){
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>/rank/user");
         System.out.println("userId: " + userId + "\ntext:" + rank);
         userService.rank(userId, rank);

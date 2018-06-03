@@ -38,7 +38,7 @@ public class ApartmentServiceImpl implements ApartmentService {
 
 
 	@Override
-	public void rank(String address, int rank) {
+	public void rank(String address, double rank) {
 		Apartment apartment = apartmentRepository.findOne(address);
 		apartment.setAvergeRank((double)rank);
 		apartmentRepository.save(apartment);

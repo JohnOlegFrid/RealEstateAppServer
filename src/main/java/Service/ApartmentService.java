@@ -9,7 +9,7 @@ import Exceptions.OnlyLandLoardCanDeleteHisAprtment;
 public interface ApartmentService {
     List<Apartment> getAll();
 //    Apartment addNew(Apartment apt);
-	void rank(String address, int rank);
+	void rank(String address, double rank);
 	Apartment getByAddress(String address);
 	List<Apartment> getByPrice(int price);
 	List<Apartment> getByElevator(boolean elevator);
