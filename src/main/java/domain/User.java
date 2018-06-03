@@ -93,7 +93,7 @@ public class User {
 
     public void setAvgRankRanker(double rank) {
     	numOfRankers++;
-    	averageRank = (numOfRankers * averageRank + averageRank) / numOfRankers;    
+    	averageRank = ((numOfRankers - 1) * averageRank + rank) / numOfRankers;    
     }
     
     public String getImage() {

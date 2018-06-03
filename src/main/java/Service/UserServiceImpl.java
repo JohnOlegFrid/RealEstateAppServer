@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService{
 
-   
+
 	@Autowired private UserRepository userRepository;
 	@Autowired private ApartmentService apartmentService;
 
@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService{
     public void rank(String token, int rank) {
     	User user = getByToken(token);
     	user.setAvgRankRanker((double) rank);
+    	userRepository.save(user);
     }
 
 	@Override
@@ -68,8 +69,9 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public boolean isExist(String token) {
+	public Boolean isExist(String token) {
 		return userRepository.exists(token);
-		
 	}
+
+	
 }

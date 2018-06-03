@@ -17,5 +17,5 @@ public interface UserService {
 	List<Apartment> getUserWishList(String token);
 	User register(String token, String firstName, String lastName, String gender, String email, String image,
 			Role root);
-	boolean isExist(String token);
+	Boolean isExist(String token);
 }
