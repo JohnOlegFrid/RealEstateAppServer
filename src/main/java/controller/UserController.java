@@ -50,6 +50,7 @@ public class UserController {
 
     }
     
+    @ResponseBody
     @RequestMapping("/isExist")
     public boolean isExist(@RequestHeader ("token") String token){
     	return userService.isExist(token);
