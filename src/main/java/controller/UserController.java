@@ -1,5 +1,6 @@
 package controller;
 
+import domain.ApartmentTransfor;
 //import domain.Apartment;
 import domain.Role;
 import domain.User;
@@ -56,10 +57,10 @@ public class UserController {
     	return userService.isExist(token);
 }
 
-//    @RequestMapping("/wishList")
-//    public @ResponseBody List<Apartment> getUserWishList(@RequestHeader ("token") String token) {
-//    	return userService.getUserWishList(token);
-//    }
+    @RequestMapping("/wishList")
+    public @ResponseBody List<ApartmentTransfor> getUserWishList(@RequestHeader ("token") String token) {
+    	return userService.getUserWishList(token);
+    }
 
 }
 

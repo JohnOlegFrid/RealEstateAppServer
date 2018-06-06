@@ -1,7 +1,9 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Id;
@@ -21,7 +23,7 @@ public class User {
     private Integer numOfRankers;
     private String image;
     private Role role;
-    @ElementCollection private List<String> wishList;
+    @ElementCollection private Set<String> wishList;
     
 
     public User(){}
@@ -35,7 +37,7 @@ public class User {
         this.setEmail(email);
         averageRank = 0.0;
         numOfRankers = 0;
-        wishList = new ArrayList<>();
+        wishList = new HashSet();
         this.role = role;
     }
 
@@ -108,7 +110,7 @@ public class User {
     	wishList.add(address);
     }
 
-	public List<String> getWishList() {
+	public Set<String> getWishList() {
 		return wishList;
 	}
 	

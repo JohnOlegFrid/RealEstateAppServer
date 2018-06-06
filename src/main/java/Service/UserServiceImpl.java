@@ -1,6 +1,7 @@
 package Service;
 import DL.UserRepository;
 import domain.Apartment;
+import domain.ApartmentTransfor;
 //import domain.Apartment;
 import domain.Role;
 import domain.User;
@@ -10,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -47,15 +49,16 @@ public class UserServiceImpl implements UserService{
 	public void addApartmentToFavorite(String token, String address) {
 		User user = getByToken(token);
 		user.addApartmentToWishList(address);
+		userRepository.save(user);
 	}
 
 	@Override
-	public List<Apartment> getUserWishList(String token) {
-		List<Apartment> ans = new ArrayList<>();
+	public List<ApartmentTransfor> getUserWishList(String token) {
+		List<ApartmentTransfor> ans = new ArrayList<>();
 		User user = getByToken(token);
-		List<String> addresses = user.getWishList();
+		Set<String> addresses = user.getWishList();
 		for (String address : addresses) {
-			ans.add(apartmentService.getByAddress(address));
+			ans.add(new ApartmentTransfor(apartmentService.getByAddress(address)));
 		}
 		return ans;
 	}

@@ -24,7 +24,7 @@ public class ApartmentTransfor extends Apartment{
 //    private boolean parking;
 //    private int numToilet;
 //    private int numRooms;
-    private byte[] image;
+    private String image;
 //	private int views;
 //	private boolean isRent;
 //	private FileOutputStream file;
@@ -53,7 +53,7 @@ public class ApartmentTransfor extends Apartment{
     	try {
 			data = Files.readAllBytes(path);
 		} catch (IOException e) {}
-    	image = data;
+    	image = new String(data);
     	
 	}
     
@@ -68,13 +68,13 @@ public class ApartmentTransfor extends Apartment{
 		try {
 			data = Files.readAllBytes(path);
 		} catch (IOException e) {}
-		image = data;
+		image = new String(data);
 	}
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }

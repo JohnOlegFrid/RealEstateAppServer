@@ -148,7 +148,7 @@ public class ApartmentServiceImpl implements ApartmentService {
 		FileOutputStream stream = null;
 		try {
 			stream = new FileOutputStream(apartment.getAddress());
-		    stream.write(apartment.getImage());
+		    stream.write(apartment.getImage().getBytes());
 		}catch (Exception e) {} 
 		finally {
 		    stream.close();
