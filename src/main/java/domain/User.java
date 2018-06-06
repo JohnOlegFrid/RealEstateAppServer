@@ -106,8 +106,8 @@ public class User {
         this.image = image;
     }
     
-    public void addApartmentToWishList(String address) {
-    	wishList.add(address);
+    public boolean addApartmentToWishList(String address) {
+    	return wishList.add(address);
     }
 
 	public Set<String> getWishList() {

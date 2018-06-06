@@ -46,10 +46,11 @@ public class UserServiceImpl implements UserService{
     }
 
 	@Override
-	public void addApartmentToFavorite(String token, String address) {
+	public boolean addApartmentToFavorite(String token, String address) {
 		User user = getByToken(token);
-		user.addApartmentToWishList(address);
+		boolean ans = user.addApartmentToWishList(address);
 		userRepository.save(user);
+		return ans;
 	}
 
 	@Override

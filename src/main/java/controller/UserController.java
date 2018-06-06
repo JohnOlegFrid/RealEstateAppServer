@@ -45,9 +45,9 @@ public class UserController {
     }
 
     @RequestMapping("/addApartmentToFavorite")
-    public void addApartmentToFavorite(@RequestHeader ("token") String token,
+    public @ResponseBody boolean addApartmentToFavorite(@RequestHeader ("token") String token,
     		@RequestHeader ("address") String address){
-    	userService.addApartmentToFavorite(token, address);
+    	return userService.addApartmentToFavorite(token, address);
 
     }
     

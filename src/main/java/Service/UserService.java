@@ -14,7 +14,7 @@ public interface UserService {
     User getByToken(String token);
     List<User> getAll();
 	void rank(String token, double rank);
-	void addApartmentToFavorite(String token, String address);
+	boolean addApartmentToFavorite(String token, String address);
 	List<ApartmentTransfor> getUserWishList(String token);
 	User register(String token, String firstName, String lastName, String gender, String email, String image,
 			Role root);
