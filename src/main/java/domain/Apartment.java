@@ -1,5 +1,7 @@
 package domain;
 
+import java.io.FileOutputStream;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,30 +9,31 @@ import javax.persistence.Id;
 public class Apartment {
 
     @Id
-    private String address;
-    private String landLordID;
-    private Integer price;
-    private Integer floor;
-    private Boolean elevator;
-    private Integer constructionYear;
-    private Boolean wareHouse;
-    private String description;
-    private Double size;
-    private Double averageRank;
-    private Integer numOfRankers;
-    private Boolean parking;
-    private Integer numToilet;
-    private Integer numRooms;
-    private String image;
-	private Integer views;
+    public String address;
+    public String landLordID;
+    public int price;
+    public int floor;
+    public boolean elevator;
+    public int constructionYear;
+    public boolean wareHouse;
+    public String description;
+    public double size;
+    public double averageRank;
+    public int numOfRankers;
+    public boolean parking;
+    public int numToilet;
+    public int numRooms;
+//    public byte[] image;
+	public int views;
+	public boolean isRent;
+//	public FileOutputStream file;
 
 
     public Apartment(){}
 
     public Apartment(Integer price, Integer floor, Boolean elevator, Integer constructionYear,
     		Boolean wareHouse, String description, Double size, String address,
-    		Boolean parking, Integer numToilet, Integer numRooms, String landLordID, String image) {
-        this.setImage(image);
+    		Boolean parking, Integer numToilet, Integer numRooms, String landLordID,boolean isRent) {
         this.setLandLordID(landLordID);
         this.setPrice(price);
         this.setFloor(floor);
@@ -46,6 +49,7 @@ public class Apartment {
         averageRank = 0.0;
         numOfRankers = 0;
         views = 0;
+        this.isRent = isRent;
     }
 
     public String getAddress() {
@@ -58,6 +62,12 @@ public class Apartment {
 
     public Integer getPrice() {
         return price;
+    }
+    
+    public Boolean getIsRent() {
+        return isRent;
+    } public void setIsRent(boolean isRent) {
+        this.isRent = isRent;
     }
 
     public void setPrice(Integer price) {
@@ -153,13 +163,7 @@ public class Apartment {
         this.landLordID = landLordID;
     }
 
-    public String getImage() {
-        return image;
-    }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 
 	public void addViews() {
 		views++;
@@ -167,6 +171,15 @@ public class Apartment {
 
 	public int getViews() {
 		return views;
+	}
+
+	public void setFile(FileOutputStream stream) {
+		// TODO Auto-generated method stub
+//		this.file = stream;
+	}
+
+	public int getNumOfRankers() {
+		return numOfRankers;
 	}
 }
 

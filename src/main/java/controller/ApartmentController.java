@@ -1,8 +1,12 @@
 package controller;
 
 import domain.Apartment;
+import domain.ApartmentTransfor;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,6 +15,7 @@ import Exceptions.NotAuthorizedUser;
 import Exceptions.OnlyLandLoardCanDeleteHisAprtment;
 import Service.ApartmentService;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -22,30 +27,22 @@ public class ApartmentController {
     private ApartmentService apartmentService;
 
     @RequestMapping("/getAll")
-    public @ResponseBody List<Apartment> getAllApartments(){
+    public @ResponseBody List<? extends Apartment> getAllApartments(){
         System.out.println("getAllApartments");
         return apartmentService.getAll();
     }
 
     
     @RequestMapping("/addNew")
-    public @ResponseBody Apartment addNewWithUserPermissions(@RequestHeader(value = "price", required = false) Integer price,
-    		@RequestHeader(value = "floor", required = false) Integer floor,
-    		@RequestHeader(value = "elevator", required = false ) Boolean elevator,
-    		@RequestHeader(value = "constructionYear", required = false ) Integer constructionYear,
-    		@RequestHeader(value = "wareHouse", required = false ) Boolean wareHouse,
-    		@RequestHeader(value = "description", required = false ) String description,
-    		@RequestHeader(value = "size", required = false ) Double size,
-    		@RequestHeader(value = "averageRank", required = false ) Double averageRank,
-    		@RequestHeader("address") String address,
-    		@RequestHeader(value = "parking", required = false ) Boolean parking,
-    		@RequestHeader(value = "numToilet", required = false ) Integer numToilet,
-    		@RequestHeader(value = "numRooms", required = false ) Integer numRooms,
-    		@RequestHeader("landLordID") String landLordID,
-    		@RequestHeader(value = "image", required = false ) String image) 
+    public @ResponseBody Apartment addNewWithUserPermissions(@RequestBody ApartmentTransfor apartment)
+    				throws NotAuthorizedUser, IOException{
+        return apartmentService.addNewWithUserPermissions(apartment);
+    }
+    @RequestMapping("/addImage")
+    public @ResponseBody void addNewWithUserPermissions(
+    		@RequestHeader (value="address") String address,
+    		@RequestBody byte[] b)
     				throws NotAuthorizedUser{
-        return apartmentService.addNewWithUserPermissions(price,floor,elevator,constructionYear,wareHouse,description,size,
-        		address,parking,numToilet,numRooms,landLordID,image);
     }
     
     @RequestMapping("/delete")
@@ -66,10 +63,12 @@ public class ApartmentController {
 
 
     @RequestMapping("/edit")
-    public @ResponseBody Apartment edit(@RequestHeader("price") Integer price,@RequestHeader("floor") Integer floor,@RequestHeader("elevator") Boolean elevator,@RequestHeader("constructionYear") Integer constructionYear,@RequestHeader("wareHouse") Boolean wareHouse,@RequestHeader("description") String description,@RequestHeader("size") Double size,@RequestHeader("averageRank") Double averageRank,@RequestHeader("address") String address,@RequestHeader("parking") Boolean parking,@RequestHeader("numToilet") Integer numToilet,@RequestHeader("numRooms") Integer numRooms,@RequestHeader("landLordID") String landLordID,@RequestHeader("image") String image){
+    public @ResponseBody Apartment edit(@RequestHeader("price") Integer price,
+    		@RequestHeader(value = "isRent", required = false ) boolean isRent,
+@RequestHeader("floor") Integer floor,@RequestHeader("elevator") Boolean elevator,@RequestHeader("constructionYear") Integer constructionYear,@RequestHeader("wareHouse") Boolean wareHouse,@RequestHeader("description") String description,@RequestHeader("size") Double size,@RequestHeader("averageRank") Double averageRank,@RequestHeader("address") String address,@RequestHeader("parking") Boolean parking,@RequestHeader("numToilet") Integer numToilet,@RequestHeader("numRooms") Integer numRooms,@RequestHeader("landLordID") String landLordID,@RequestHeader("image") byte[] image){
         System.out.println("edit apartment with address: "+address);
         return apartmentService.edit(price,floor,elevator,constructionYear,
-        		wareHouse,description,size,address,parking,numToilet,numRooms,landLordID,image);
+        		wareHouse,description,size,address,parking,numToilet,numRooms,landLordID,image,isRent);
     }
     
     @GetMapping("/getByAddress")
@@ -135,5 +134,9 @@ public class ApartmentController {
     public @ResponseBody List<Apartment> getByNumRooms(@RequestHeader("address") String address,
 			@RequestHeader("numRooms") int numRooms){
         return apartmentService.getByNumRooms(numRooms);
+    } 
+    @PostMapping("/delete")
+    public @ResponseBody boolean delete(@RequestHeader("address") String address){
+        return apartmentService.delete(address);
     } 
 }

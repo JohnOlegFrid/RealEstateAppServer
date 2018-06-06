@@ -1,14 +1,16 @@
 package Service;
 
 import domain.Apartment;
+import domain.ApartmentTransfor;
+
+import java.io.IOException;
 import java.util.List;
 
 import Exceptions.NotAuthorizedUser;
 import Exceptions.OnlyLandLoardCanDeleteHisAprtment;
 
 public interface ApartmentService {
-    List<Apartment> getAll();
-//    Apartment addNew(Apartment apt);
+    List<? extends Apartment> getAll();
 	void rank(String address, double rank);
 	Apartment getByAddress(String address);
 	List<Apartment> getByPrice(int price);
@@ -23,15 +25,11 @@ public interface ApartmentService {
 	List<Apartment> getByLandLordID(int token);
 	Apartment edit(Integer price, Integer floor, Boolean elevator, Integer constructionYear, Boolean wareHouse,
 			String description, Double size, String address, Boolean parking, Integer numToilet, Integer numRooms,
-			String landLordID, String image);
-//	Apartment addNew(Integer price, Integer floor, Boolean elevator, Integer constructionYear, Boolean wareHouse,
-//			String description, Double size, String address, Boolean parking, Integer numToilet, Integer numRooms,
-//			String landLordID, String image);
+			String landLordID, byte[] image,boolean isRent);
 	int getViewsForApartment(String address);
 	void addViewToApartment(String address);
-	Apartment addNewWithUserPermissions(Integer price, Integer floor, Boolean elevator, Integer constructionYear,
-			Boolean wareHouse, String description, Double size, String address, Boolean parking, Integer numToilet,
-			Integer numRooms, String landLordID, String image) throws NotAuthorizedUser;
 	void delete(String address, String landLoardId) throws OnlyLandLoardCanDeleteHisAprtment, NotAuthorizedUser;
-
+	boolean delete(String address);
+//	Apartment addNewWithUserPermissions(Apartment apartment) throws NotAuthorizedUser, IOException;
+	Apartment addNewWithUserPermissions(ApartmentTransfor apartmente) throws NotAuthorizedUser, IOException;
 }
