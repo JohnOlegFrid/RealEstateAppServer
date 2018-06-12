@@ -80,13 +80,17 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public boolean blockUserChat(String myToken, String blokToken) {
 		User user = userRepository.findOne(myToken);
-		return user.addUserChaTBlock(blokToken);
+		boolean ans = user.addUserChaTBlock(blokToken);
+		userRepository.save(user);
+		return ans;
 	}
 
 	@Override
 	public boolean blockUserApartment(String myToken, String blokToken) {
 		User user = userRepository.findOne(myToken);
-		return user.addUserApartmentBlock(blokToken);
+		boolean ans = user.addUserApartmentBlock(blokToken);
+		userRepository.save(user);
+		return ans;
 	}
 
 	@Override

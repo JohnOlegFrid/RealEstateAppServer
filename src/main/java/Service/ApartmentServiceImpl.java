@@ -42,7 +42,7 @@ public class ApartmentServiceImpl implements ApartmentService {
         Iterable<Apartment> apartments = apartmentRepository.findAll();
         List<ApartmentTransfor> ans= new ArrayList<>();
         Set<String> blockingAddress = null;
-        if(token != null) {
+        if(!token.equals("")) {
         	User user = userService.getByToken(token);
         	blockingAddress = user.getBlockApartment();
         }
