@@ -9,6 +9,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Id;
 
 import org.hibernate.jpa.criteria.expression.function.AggregationFunction.AVG;
+import org.yaml.snakeyaml.tokens.BlockEndToken;
 
 @javax.persistence.Entity
 public class User {
@@ -24,6 +25,8 @@ public class User {
     private String image;
     private Role role;
     @ElementCollection private Set<String> wishList;
+    @ElementCollection private Set<String> blockChat;
+    @ElementCollection private Set<String> blockApartment;
     
 
     public User(){}
@@ -39,6 +42,8 @@ public class User {
         numOfRankers = 0;
         wishList = new HashSet();
         this.role = role;
+        blockChat = new HashSet();
+        blockApartment = new HashSet();
     }
 
     public String getToken() {
@@ -80,15 +85,6 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-//    public Double getAvgRankLandLoard() {
-//        return avgRankLandLoard.getSecond();
-//    }
-//
-//    public void setAvgRankLandLoard(Double rank) {
-//    	Rank.rank(avgRankLandLoard, rank);
-//    }
-
     public Double getAvgRankRanker() {
         return averageRank;
     }
@@ -114,12 +110,32 @@ public class User {
 		return wishList;
 	}
 	
+	public boolean addUserChaTBlock(String token) {
+    	return blockChat.add(token);
+    }
+
+	public Set<String> getBlockChat() {
+		return blockChat;
+	}
+	
+	public boolean addUserApartmentBlock(String token) {
+    	return blockApartment.add(token);
+    }
+
+	public Set<String> getBlockApartment() {
+		return blockApartment;
+	}
+	
 	public Role getRole() {
 		return role;
 	}
 
 	public boolean isRoot() {
 		return role == Role.Root;
+	}
+
+	public boolean isBlockForChat(String blokToken) {
+		return blockChat.contains(blokToken);
 	}
 	
 	

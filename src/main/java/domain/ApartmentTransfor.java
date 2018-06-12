@@ -47,7 +47,7 @@ public class ApartmentTransfor extends Apartment{
 		super.numToilet = apartment.getNumToilet();
 		super.numRooms = apartment.getNumRooms();
 		this.views = apartment.getViews();
-		super.isRent = getIsRent();
+		super.isRent = apartment.getIsRent();
     	Path path = Paths.get(address);
 		byte[] data = null;
     	try {

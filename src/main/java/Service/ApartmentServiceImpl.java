@@ -8,6 +8,8 @@ import Exceptions.UserDoesntExistException;
 import domain.Apartment;
 import domain.ApartmentTransfor;
 import domain.User;
+
+import org.apache.tomcat.jni.Address;
 //import org.apache.commons.;
 //import org.apache.commons
 //import org.apache.tomcat.util.http.fileupload.FileUtils;
@@ -24,6 +26,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ApartmentServiceImpl implements ApartmentService {
@@ -35,11 +38,18 @@ public class ApartmentServiceImpl implements ApartmentService {
 
     @Transactional
     @Override
-    public List<? extends Apartment> getAll() {
-        Iterable<Apartment> l= apartmentRepository.findAll();
+    public List<? extends Apartment> getAll(String token) {
+        Iterable<Apartment> apartments = apartmentRepository.findAll();
         List<ApartmentTransfor> ans= new ArrayList<>();
-        for (Apartment apartment : l)
-            ans.add(new ApartmentTransfor(apartment));
+        Set<String> blockingAddress = null;
+        if(token != null) {
+        	User user = userService.getByToken(token);
+        	blockingAddress = user.getBlockApartment();
+        }
+        for (Apartment apartment : apartments) {
+        	if(blockingAddress != null && !blockingAddress.contains(apartment.getLandLordID()))
+        		ans.add(new ApartmentTransfor(apartment));
+        }
         return ans;
     }
 
@@ -143,7 +153,7 @@ public class ApartmentServiceImpl implements ApartmentService {
 
 
 	@Override
-	public Apartment addNewWithUserPermissions(ApartmentTransfor apartment) throws NotAuthorizedUser, IOException {
+	public boolean addNewWithUserPermissions(ApartmentTransfor apartment) throws NotAuthorizedUser, IOException {
 		checkIsRoot(apartment.getLandLordID());
 		FileOutputStream stream = null;
 		try {
@@ -153,12 +163,15 @@ public class ApartmentServiceImpl implements ApartmentService {
 		finally {
 		    stream.close();
 		}
-		return apartmentRepository.save(
+		boolean ans = apartmentRepository.exists(apartment.address);
+		if(!ans) 
+			apartmentRepository.save(
 				new Apartment(
 						apartment.price, apartment.floor, apartment.elevator, apartment.constructionYear,
 						apartment.wareHouse, apartment.description, apartment.size, apartment.address,
 						apartment.parking, apartment.numToilet, apartment.numRooms, 
 						apartment.landLordID,apartment.isRent));
+		return ans;
 	}
 
 

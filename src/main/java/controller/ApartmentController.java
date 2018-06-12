@@ -27,14 +27,14 @@ public class ApartmentController {
     private ApartmentService apartmentService;
 
     @RequestMapping("/getAll")
-    public @ResponseBody List<? extends Apartment> getAllApartments(){
+    public @ResponseBody List<? extends Apartment> getAllApartments(@RequestHeader("token") String token){
         System.out.println("getAllApartments");
-        return apartmentService.getAll();
+        return apartmentService.getAll(token);
     }
 
     
     @RequestMapping("/addNew")
-    public @ResponseBody Apartment addNewWithUserPermissions(@RequestBody ApartmentTransfor apartment)
+    public @ResponseBody Boolean addNewWithUserPermissions(@RequestBody ApartmentTransfor apartment)
     				throws NotAuthorizedUser, IOException{
         return apartmentService.addNewWithUserPermissions(apartment);
     }

@@ -10,7 +10,6 @@ import Exceptions.NotAuthorizedUser;
 import Exceptions.OnlyLandLoardCanDeleteHisAprtment;
 
 public interface ApartmentService {
-    List<? extends Apartment> getAll();
 	void rank(String address, double rank);
 	Apartment getByAddress(String address);
 	List<Apartment> getByPrice(int price);
@@ -30,6 +29,6 @@ public interface ApartmentService {
 	void addViewToApartment(String address);
 	void delete(String address, String landLoardId) throws OnlyLandLoardCanDeleteHisAprtment, NotAuthorizedUser;
 	boolean delete(String address);
-//	Apartment addNewWithUserPermissions(Apartment apartment) throws NotAuthorizedUser, IOException;
-	Apartment addNewWithUserPermissions(ApartmentTransfor apartmente) throws NotAuthorizedUser, IOException;
+	boolean addNewWithUserPermissions(ApartmentTransfor apartmente) throws NotAuthorizedUser, IOException;
+	List<? extends Apartment> getAll(String token);
 }

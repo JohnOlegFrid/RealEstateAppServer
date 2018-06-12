@@ -61,15 +61,21 @@ public class UserController {
     public @ResponseBody List<ApartmentTransfor> getUserWishList(@RequestHeader ("token") String token) {
     	return userService.getUserWishList(token);
     }
+    
+    @RequestMapping("/blockChatUser")
+    public @ResponseBody boolean addToBlockChat(@RequestHeader ("myToken") String myToken,
+    											@RequestHeader ("blockToken") String blokToken) {
+    	return userService.blockUserChat(myToken,blokToken);
+    }
+    @RequestMapping("/blockApartmentUser")
+    public @ResponseBody boolean addToBlockApartment(@RequestHeader ("myToken") String myToken,
+    											@RequestHeader ("blockToken") String blokToken) {
+    	return userService.blockUserApartment(myToken,blokToken);
+    }
+    @RequestMapping("/isBlockForChat")
+    public @ResponseBody boolean isBlockForChat(@RequestHeader ("myToken") String myToken,
+    											@RequestHeader ("blockToken") String blokToken) {
+    	return userService.isBlockForChat(myToken,blokToken);
+    }
 
 }
-
-
-
-
-
-//@RequestMapping("/forTest")
-//public @ResponseBody String forTest(){
-//  //System.out.println("get by token : "+token);
-//  return "s";
-//}

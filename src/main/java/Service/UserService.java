@@ -19,4 +19,7 @@ public interface UserService {
 	User register(String token, String firstName, String lastName, String gender, String email, String image,
 			Role root);
 	Boolean isExist(String token);
+	boolean blockUserChat(String myToken, String blokToken);
+	boolean blockUserApartment(String myToken, String blokToken);
+	boolean isBlockForChat(String myToken, String blokToken);
 }
