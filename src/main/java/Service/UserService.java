@@ -22,4 +22,5 @@ public interface UserService {
 	boolean blockUserChat(String myToken, String blokToken);
 	boolean blockUserApartment(String myToken, String blokToken);
 	boolean isBlockForChat(String myToken, String blokToken);
+	String getTokenByUserName(String name);
 }

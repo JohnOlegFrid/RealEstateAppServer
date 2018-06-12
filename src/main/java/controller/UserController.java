@@ -77,5 +77,10 @@ public class UserController {
     											@RequestHeader ("blockToken") String blokToken) {
     	return userService.isBlockForChat(myToken,blokToken);
     }
+    
+    @RequestMapping("/getTokenByUserName")
+    public @ResponseBody String getTokenByUserName(@RequestHeader ("userName") String name) {
+    	return userService.getTokenByUserName(name);
+    }
 
 }

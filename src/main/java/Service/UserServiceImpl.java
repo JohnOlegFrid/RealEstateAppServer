@@ -99,5 +99,14 @@ public class UserServiceImpl implements UserService{
 		return user.isBlockForChat(blokToken);
 	}
 
-	
+	@Override
+	public String getTokenByUserName(String name) {
+		List<User> users = getAll();
+		for (User user : users) {
+			String userName = user.getFirstName() + " " + user.getLastName();
+			if(userName.equals(name))
+				return user.getToken();
+		}
+		return "";
+	}
 }
