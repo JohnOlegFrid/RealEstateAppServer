@@ -109,4 +109,28 @@ public class UserServiceImpl implements UserService{
 		}
 		return "";
 	}
+
+	@Override
+	public Boolean deleteFromWishList(String token, String address) {
+		User user = getByToken(token);
+		boolean ans = user.deleteFromWishList(address);
+		userRepository.save(user);
+		return ans;
+	}
+
+	@Override
+	public boolean deleteFromBlockChat(String myToken, String blokToken) {
+		User user = getByToken(myToken);
+		boolean ans = user.deleteFromBlockChat(blokToken);
+		userRepository.save(user);
+		return ans;
+	}
+
+	@Override
+	public boolean deleteFromBlockApartment(String myToken, String blokToken) {
+		User user = getByToken(myToken);
+		boolean ans = user.deleteFromBlockApartment(blokToken);
+		userRepository.save(user);
+		return ans;
+	}
 }

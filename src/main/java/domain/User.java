@@ -137,6 +137,18 @@ public class User {
 	public boolean isBlockForChat(String blokToken) {
 		return blockChat.contains(blokToken);
 	}
+
+	public boolean deleteFromWishList(String address) {
+		return wishList.remove(address);
+	}
+
+	public boolean deleteFromBlockChat(String blokToken) {
+		return blockChat.remove(blokToken);
+	}
+
+	public boolean deleteFromBlockApartment(String blokToken) {
+		return blockApartment.remove(blokToken);
+	}
 	
 	
 }

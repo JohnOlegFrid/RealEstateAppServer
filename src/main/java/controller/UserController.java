@@ -72,6 +72,23 @@ public class UserController {
     											@RequestHeader ("blockToken") String blokToken) {
     	return userService.blockUserApartment(myToken,blokToken);
     }
+    
+    @RequestMapping("/deleteFromWishList")
+    public @ResponseBody Boolean deleteFromWishList(@RequestHeader ("token") String token,
+    												@RequestHeader ("address") String address) {
+    	return userService.deleteFromWishList(token, address);
+    }
+    
+    @RequestMapping("/deleteFromBlockChat")
+    public @ResponseBody boolean deleteFromBlockChat(@RequestHeader ("myToken") String myToken,
+    											@RequestHeader ("blockToken") String blokToken) {
+    	return userService.deleteFromBlockChat(myToken,blokToken);
+    }
+    @RequestMapping("/deleteFromBlockApartment")
+    public @ResponseBody boolean deleteFromBlockApartment(@RequestHeader ("myToken") String myToken,
+    											@RequestHeader ("blockToken") String blokToken) {
+    	return userService.deleteFromBlockApartment(myToken,blokToken);
+    }
     @RequestMapping("/isBlockForChat")
     public @ResponseBody boolean isBlockForChat(@RequestHeader ("myToken") String myToken,
     											@RequestHeader ("blockToken") String blokToken) {
